@@ -7,101 +7,228 @@
 
 <title>Santushti Garments</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
-    color:black;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f5f5;
+    color:#111;
+    overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
-    background:linear-gradient(90deg,#000,#222);
 
-    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    box-shadow:0 2px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    margin-left:30px;
+    font-size:17px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#25D366;
+}
+
+/* HERO */
+
+.hero{
+
+    height:90vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)),
+
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     text-align:center;
 
-    padding:30px;
+    color:white;
 
-    font-size:40px;
-
-    font-weight:bold;
-
-    letter-spacing:2px;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-
-/* CONTAINER */
-
-.container{
     padding:20px;
 }
 
-/* PRODUCT CARD */
+.hero-content{
+    animation:fade 1.5s;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+.hero p{
+    font-size:24px;
+    max-width:850px;
+    line-height:1.7;
+    color:#ddd;
+}
+
+/* BUTTON */
+
+.hero-btn{
+
+    margin-top:35px;
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+    animation:glow 1.5s infinite alternate;
+}
+
+.hero-btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section-title{
+    text-align:center;
+    margin:80px 0 50px;
+}
+
+.section-title h2{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:18px;
+}
+
+/* PRODUCTS */
+
+.products{
+
+    width:90%;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-bottom:100px;
+}
+
+/* CARD */
 
 .card{
 
-    background:#111;
+    background:white;
 
     border-radius:25px;
 
     overflow:hidden;
 
-    margin-bottom:50px;
+    box-shadow:0 8px 35px rgba(0,0,0,0.08);
 
-    box-shadow:
-    0 0 25px rgba(0,0,0,0.3);
+    transition:0.4s;
 
     animation:fade 1.2s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
 }
 
 /* IMAGE */
 
 .card img{
     width:100%;
-    display:block;
+    height:420px;
+    object-fit:cover;
 }
 
 /* DETAILS */
 
 .details{
     padding:25px;
-    color:white;
 }
 
-/* TITLE */
-
-.details h2{
-    font-size:38px;
-    margin-bottom:15px;
+.details h3{
+    font-size:28px;
+    margin-bottom:10px;
 }
-
-/* DESCRIPTION */
 
 .details p{
-    font-size:21px;
-    color:#ddd;
-    line-height:1.5;
+    color:#666;
+    line-height:1.6;
+    margin-bottom:20px;
 }
 
 /* PRICE */
 
 .price{
-    font-size:42px;
-    color:gold;
+    font-size:35px;
+    color:#111;
     font-weight:bold;
-    margin:25px 0;
+    margin-bottom:25px;
 }
 
-/* BUTTON */
+/* ORDER BUTTON */
 
-button{
+.order-btn{
 
     width:100%;
 
@@ -113,9 +240,9 @@ button{
 
     color:white;
 
-    font-size:24px;
-
     border-radius:15px;
+
+    font-size:20px;
 
     font-weight:bold;
 
@@ -126,13 +253,81 @@ button{
     animation:glow 1.5s infinite alternate;
 }
 
-/* BUTTON HOVER */
-
-button:hover{
-    transform:scale(1.04);
+.order-btn:hover{
+    transform:scale(1.03);
 }
 
-/* GLOW EFFECT */
+/* FEATURES */
+
+.features{
+
+    width:90%;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-bottom:100px;
+}
+
+.feature-box{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.07);
+
+    transition:0.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-8px);
+}
+
+.feature-box h3{
+    margin:20px 0;
+    font-size:26px;
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:60px 10%;
+
+    text-align:center;
+}
+
+footer h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+footer p{
+    color:#ccc;
+    line-height:1.7;
+    max-width:800px;
+    margin:auto;
+}
+
+.footer-bottom{
+    margin-top:40px;
+    color:#888;
+}
+
+/* ANIMATIONS */
 
 @keyframes glow{
 
@@ -147,8 +342,6 @@ button:hover{
     }
 }
 
-/* CARD ANIMATION */
-
 @keyframes fade{
 
     from{
@@ -162,51 +355,106 @@ button:hover{
     }
 }
 
-/* LINE */
+/* MOBILE */
 
-hr{
-    border:none;
-    height:4px;
-    background:black;
-    margin:45px 0;
-    border-radius:10px;
+@media(max-width:768px){
+
+.hero h1{
+    font-size:45px;
 }
 
-/* FOOTER */
+.hero p{
+    font-size:18px;
+}
 
-footer{
-    text-align:center;
-    background:black;
-    color:white;
-    padding:30px;
-    font-size:22px;
-    margin-top:30px;
+.section-title h2{
+    font-size:38px;
+}
+
+header{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav a{
+    margin:0 10px;
+}
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
+<div class="logo">
 Santushti Garments
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Collection</a>
+<a href="#">Premium</a>
+<a href="#">Contact</a>
+</nav>
+
 </header>
 
-<div class="container">
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Luxury Fashion Store</h1>
+
+<p>
+Premium quality fashion for modern lifestyle. 
+Luxury clothing collection with stylish design and comfortable fitting.
+</p>
+
+<a class="hero-btn"
+target="_blank"
+href="https://wa.me/919235632436?text=Hello%20I%20want%20to%20order%20from%20Santushti%20Garments">
+
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+<!-- TITLE -->
+
+<div class="section-title">
+
+<h2>Premium Collection</h2>
+
+<p>
+Modern luxury fashion collection for premium lifestyle.
+</p>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="products">
 
 <!-- PRODUCT 1 -->
 
 <div class="card">
 
-<img src="https://i.ibb.co/9kTfTd5t/IMG-20260516-WA0002.jpg" alt="Tshirt">
+<img src="https://i.ibb.co/9kTfTd5t/IMG-20260516-WA0002.jpg">
 
 <div class="details">
 
-<h2>Luxury White Printed T-Shirt</h2>
+<h3>Luxury White Printed T-Shirt</h3>
 
 <p>
-Premium stylish white printed t-shirt for daily fashion and modern look.
+Premium stylish white printed t-shirt for daily fashion and modern premium look.
 </p>
 
 <div class="price">
@@ -216,7 +464,7 @@ Premium stylish white printed t-shirt for daily fashion and modern look.
 <a target="_blank"
 href="https://wa.me/919235632436?text=Hello%20I%20want%20to%20order%20Luxury%20White%20Printed%20T-Shirt">
 
-<button>
+<button class="order-btn">
 Order on WhatsApp
 </button>
 
@@ -225,17 +473,15 @@ Order on WhatsApp
 </div>
 </div>
 
-<hr>
-
 <!-- PRODUCT 2 -->
 
 <div class="card">
 
-<img src="https://i.ibb.co/kVwqPxCY/IMG-20260516-WA0000.jpg" alt="Tshirt">
+<img src="https://i.ibb.co/kVwqPxCY/IMG-20260516-WA0000.jpg">
 
 <div class="details">
 
-<h2>Premium Fashion Casual T-Shirt</h2>
+<h3>Premium Fashion Casual T-Shirt</h3>
 
 <p>
 Luxury premium fashion t-shirt with stylish design and comfortable fitting.
@@ -248,7 +494,7 @@ Luxury premium fashion t-shirt with stylish design and comfortable fitting.
 <a target="_blank"
 href="https://wa.me/919235632436?text=Hello%20I%20want%20to%20order%20Premium%20Fashion%20Casual%20T-Shirt">
 
-<button>
+<button class="order-btn">
 Order on WhatsApp
 </button>
 
@@ -257,10 +503,49 @@ Order on WhatsApp
 </div>
 </div>
 
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="feature-box">
+<h3>Premium Quality</h3>
+<p>
+High quality fabric with luxury finishing and comfortable fitting.
+</p>
 </div>
 
+<div class="feature-box">
+<h3>Fast Support</h3>
+<p>
+Quick response and easy WhatsApp ordering support for customers.
+</p>
+</div>
+
+<div class="feature-box">
+<h3>Modern Fashion</h3>
+<p>
+Stylish fashion collection designed for modern lifestyle and trend.
+</p>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-© 2026 Santushti Garments
+
+<h2>Santushti Garments</h2>
+
+<p>
+Luxury fashion brand focused on premium quality and modern stylish collection.
+</p>
+
+<div class="footer-bottom">
+© 2026 Santushti Garments | All Rights Reserved
+</div>
+
 </footer>
 
 </body>
