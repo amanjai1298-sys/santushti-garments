@@ -10,11 +10,11 @@ body{
     margin:0;
     font-family:Arial;
     background:#111;
-    color:white;
+    color:black;
 }
 
 header{
-    background:black;
+    background:white;
     padding:20px;
     text-align:center;
     font-size:28px;
@@ -93,7 +93,36 @@ Premium stylish t-shirt for daily fashion look.
 
 <a href="https://wa.me/919235632436?text=Hello%20I%20want%20to%20order%20this%20T-shirt">
 
-<button>
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#25D366;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+
+    animation: glow 1.5s infinite alternate;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px #25D366;
+    }
+
+    to{
+        box-shadow:0 0 25px #25D366,
+                   0 0 40px #25D366;
+    }
+}
 Order on WhatsApp
 </button>
 
