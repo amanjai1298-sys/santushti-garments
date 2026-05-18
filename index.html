@@ -37,9 +37,40 @@
     }
 
     .logo h1 {
+      position: relative;
       font-size: 26px;
       font-weight: 900;
       letter-spacing: 2px;
+    }
+
+    .animated-logo {
+      background: linear-gradient(90deg,#ffffff,#bbbbbb,#ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite, floatText 3s ease-in-out infinite;
+      text-shadow: 0 0 25px rgba(255,255,255,0.25);
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 200% center;
+      }
+      100% {
+        background-position: -200% center;
+      }
+    }
+
+    @keyframes floatText {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-3px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
     }
 
     .logo p {
@@ -409,11 +440,11 @@
 <body>  <nav>
     <div class="nav-content">
       <div class="logo">
-        <h1>Santushti Garments</h1>
+        <h1 class="animated-logo">Santushti Garments</h1>
         <p>Karari • Near Pushvatika Guest House</p>
       </div><div class="nav-links">
     <a href="#">Home</a>
-    <a href="#">Shop</a>
+    <a href="#tshirt-section">T-Shirts</a>
     <a href="#">Contact</a>
   </div>
 </div>
@@ -431,8 +462,13 @@
     </p>
 
     <div class="buttons">
-      <button class="btn btn-primary">Shop Now</button>
-      <button class="btn btn-secondary">Explore Collection</button>
+      <a href="#tshirt-section">
+        <button class="btn btn-primary">Shop Now</button>
+      </a>
+
+      <a href="https://wa.me/910000000000?text=Hello%20Santushti%20Garments%2C%20I%20want%20to%20buy%20this%20T-shirt" target="_blank">
+        <button class="btn btn-secondary">WhatsApp Order</button>
+      </a>
     </div>
 
     <div class="stats">
@@ -458,10 +494,10 @@
   </div>
 </div>
 
-  </section>  <section class="product-section">
+  </section>  <section class="product-section" id="tshirt-section">
     <div class="container">
       <div class="section-title">
-        <p>Featured Product</p>
+        <p>T-Shirt Section</p>
         <h2>Premium Oversized T-Shirt</h2>
       </div><div class="product-grid">
 
@@ -511,7 +547,12 @@
 
       <div class="buy-buttons">
         <button class="btn btn-primary">Add To Cart</button>
-        <button class="btn btn-secondary">Buy Now</button>
+
+        <a href="https://wa.me/910000000000?text=Hello%20Santushti%20Garments%2C%20I%20want%20to%20buy%20the%20Santushti%20Premium%20Tee" target="_blank">
+          <button class="btn btn-secondary" style="width:100%;">
+            Buy On WhatsApp
+          </button>
+        </a>
       </div>
 
       <div class="feature-grid">
@@ -558,4 +599,4 @@
       }
     });
   </script></body>
-        </html>
+          </html>
